@@ -6,6 +6,7 @@
 #   - GPU_ID: GPU to use, or -1 for CPU. Defaults to 0.
 #   - SEED: random seed. Defaults to 111.
 
+set -x
 source user_config.sh
 seed=${3:-111}
 gpuid=${2:-0}
