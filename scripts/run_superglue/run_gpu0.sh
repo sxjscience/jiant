@@ -1,3 +1,4 @@
+source ../user_config.sh
 bash ../superglue-baselines.sh commit 0
 bash ../superglue-baselines.sh rte 0
 bash ../superglue-baselines.sh commit++ 0

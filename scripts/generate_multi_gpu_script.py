@@ -8,6 +8,7 @@ NGPUS = 4
 of_l = []
 for i in range(NGPUS):
     of = open(os.path.join(BASE_DIR, 'run_gpu{}.sh'.format(i)), 'w')
+    of.write('source ../user_config.sh\n')
     of_l.append(of)
 for i, task in enumerate(TASKS):
     gpu_id = i % NGPUS
