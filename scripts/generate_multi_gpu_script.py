@@ -11,6 +11,6 @@ for i in range(NGPUS):
     of_l.append(of)
 for i, task in enumerate(TASKS):
     gpu_id = i % NGPUS
-    of_l[gpu_id].write('bash superglue-baselines.sh {} {}\n'.format(task, gpu_id))
+    of_l[gpu_id].write('bash ../superglue-baselines.sh {} {}\n'.format(task, gpu_id))
 for i in range(NGPUS):
     of_l[i].close()
