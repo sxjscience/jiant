@@ -32,7 +32,7 @@ function record() {
 }
 
 function rte() {
-    python3 -W ignore ${JIANT_PROJECT_PREFIX}/main.py --config "${JIANT_PROJECT_PREFIX}/jiant/config/superglue_bert.conf" --overrides "random_seed = ${seed}, cuda = ${gpuid}, run_name = rte, pretrain_tasks = rte-superglue, target_tasks = rte-superglue,broadcoverage-diagnostic,winogender-diagnostic, do_pretrain = 1, do_target_task_training = 0, do_full_eval = 1, batch_size = 4, val_interval = 625"
+    python3 -W ignore ${JIANT_PROJECT_PREFIX}/main.py --config "${JIANT_PROJECT_PREFIX}/jiant/config/superglue_bert.conf" --overrides "random_seed = ${seed}, cuda = ${gpuid}, run_name = rte, pretrain_tasks = rte-superglue, target_tasks = \"rte-superglue,broadcoverage-diagnostic,winogender-diagnostic\", do_pretrain = 1, do_target_task_training = 0, do_full_eval = 1, batch_size = 4, val_interval = 625"
 }
 
 function wic() {
@@ -57,7 +57,7 @@ function copa_plus() {
 }
 
 function rte_plus() {
-    python3 -W ignore ${JIANT_PROJECT_PREFIX}/main.py --config "${JIANT_PROJECT_PREFIX}/jiant/config/superglue_bert.conf" --overrides "random_seed = ${seed}, cuda = ${gpuid}, run_name = rte_plus, pretrain_tasks = mnli, target_tasks = rte-superglue,winogender-diagnostic,broadcoverage-diagnostic, do_pretrain = 1, do_target_task_training = 1, do_full_eval = 1, batch_size = 4, val_interval = 1000, target_train_val_interval = 625"
+    python3 -W ignore ${JIANT_PROJECT_PREFIX}/main.py --config "${JIANT_PROJECT_PREFIX}/jiant/config/superglue_bert.conf" --overrides "random_seed = ${seed}, cuda = ${gpuid}, run_name = rte_plus, pretrain_tasks = mnli, target_tasks = \"rte-superglue,winogender-diagnostic,broadcoverage-diagnostic\", do_pretrain = 1, do_target_task_training = 1, do_full_eval = 1, batch_size = 4, val_interval = 1000, target_train_val_interval = 625"
 }
 
 function boolq_bow() {
@@ -81,7 +81,7 @@ function record_bow() {
 }
 
 function rte_bow() {
-    python3 -W ignore ${JIANT_PROJECT_PREFIX}/main.py --config "${JIANT_PROJECT_PREFIX}/jiant/config/superglue_bow.conf" --overrides "random_seed = ${seed}, cuda = ${gpuid}, exp_name = bow-rte, run_name = rte, pretrain_tasks = rte-superglue, target_tasks = rte-superglue,broadcoverage-diagnostic,winogender-diagnostic, do_pretrain = 1, do_target_task_training = 0, do_full_eval = 1, val_interval = 625"
+    python3 -W ignore ${JIANT_PROJECT_PREFIX}/main.py --config "${JIANT_PROJECT_PREFIX}/jiant/config/superglue_bow.conf" --overrides "random_seed = ${seed}, cuda = ${gpuid}, exp_name = bow-rte, run_name = rte, pretrain_tasks = rte-superglue, target_tasks = \"rte-superglue,broadcoverage-diagnostic,winogender-diagnostic\", do_pretrain = 1, do_target_task_training = 0, do_full_eval = 1, val_interval = 625"
 }
 
 function wic_bow() {
